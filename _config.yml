@@ -1,0 +1,15 @@
+# Site settings
+title: James Mount
+email: jmount1992@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  This is a dummy website that is part of James Mount's website building guide.
+baseurl: "/dummy-website-4" # the subpath of your site, e.g. /blog
+url: "https://jamesmount.tech" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: jmount1992
+github_username:  jmount1992
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
