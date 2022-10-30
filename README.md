@@ -233,4 +233,33 @@ The information for what add into `_config.yml`, `index.md`, and `_data/navigati
 
 ## Hacking Themes
 
+Okay now that we are back to our Cayman theme. Let's get hacking. Firstly, we should create a navigation bar, as we want separate pages. If you read the theme's documentation, or check out the preview, you will notice it has three download buttons. We don't want these downloads, but we can use the buttons as our navigation. 
+
+1. First, copy the standard theme default html into `_layouts/default.html`. As we are using the remote-theme, it may be a bit annoying to use the `bundle info --path <theme>` to find the local copy of the files. You can do it, just a little tedious. Instead, the easiest way is to simply download the file from the github repo. For example, we can use curl: `curl https://raw.githubusercontent.com/pages-themes/cayman/master/_layouts/default.html --create-dirs -o _layouts/default.html`.
+
+2. In `_layouts/default.html` replace lines 21 to 27 with:
+    ```html
+    {% include navigation.html %}
+    ```
+
+3. Create a `_includes/navigation.html` file and add the following code
+    ```html
+    <nav>
+        <a href="{{site.baseurl}}/" class="btn">Home</a>
+        {% for item in site.data.navigation.main %}
+        <a href="{{site.baseurl}}{{ item.url }}" class="btn">{{ item.title }}</a>
+        {% endfor %}
+    </nav>
+    ```
+
+Check out the results locally (re-serve the website if required). You should now have a navigation bar that is easily maintainable and expandable.
+
+## Congratulations
+
+You should now have everything you need to know to create a pretty fantastic static website. Remember Google is your friend, but the best place to get started is the [Jekll documentation](https://jekyllrb.com/docs/). To start building your own site I would recommend you
+
+1. What is the purpose of your website. Is it a simple website just to have a digital resume? Do you want to write posts? Do you want a separate page for listing your publications and upcoming presentations?
+2. Once you have an idea of your website's purpose, sketch out on paper how you want your site to look. You might use one piece of paper per page and use blocks to show where component groups will go. For example, where your navigation bar will be, where content will go, etc.
+3. Once you are happy with the purpose and have a rough idea of how your content should be displayed, have a look through various themes to see if any align well with what you want. This might take some time as there are hundred of themes out there and, it is good to quickly skim theme documentation or preview its sample site. However, don't worry too much, you can change themes at a later date, albeit it will require some work.
+4. Once you are happy with all that, get cracking.
 

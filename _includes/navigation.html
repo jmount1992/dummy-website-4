@@ -1,0 +1,6 @@
+<nav>
+    <a href="{{site.baseurl}}/" class="btn">Home</a>
+    {% for item in site.data.navigation.main %}
+    <a href="{{site.baseurl}}{{ item.url }}" class="btn">{{ item.title }}</a>
+    {% endfor %}
+</nav>
