@@ -11,7 +11,7 @@ github_username:  jmount1992
 timezone: Australia/Brisbane
 
 # Build settings
-remote_theme: mmistakes/minimal-mistakes@4.24.0
+remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
